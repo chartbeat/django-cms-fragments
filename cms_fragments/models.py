@@ -14,7 +14,7 @@ class Fragment(models.Model):
     fragment_type = models.CharField(max_length=10, choices=(('js', 'JavaScript'), ('css', 'CSS'), ('html', 'HTML'))) #to add html option insert , ('html', 'html')
     file = models.FileField(null=True, blank=True, upload_to="cms_fragments");
     direct_url = models.URLField(null=True, blank=True)
-    inline_code = models.Textarea(null=True, blank=True)
+    inline_code = acearea.AceAreaField(null=True, blank=True)
     
     def clean(self):
         # Don't allow all direct_url, file and inline_code to be empty

@@ -25,7 +25,7 @@ class AceArea(Textarea):
         template = """
         <div class="ace-editor-widget">
             <div id="%s_editor" class="ace_editor ace-django-editor" data-target="%s">%s</div>
-            <textarea style="display:none;"%s></textarea>
+            <textarea style=""%s></textarea>
         </div>
         
         """ %  (id, id, conditional_escape(force_unicode(value)), flatatt(final_attrs))
